@@ -3,7 +3,6 @@ require_relative 'data_reader'
 class Equilibria
 
   def initialize(input)
-    @input = input
     @numbers = DataReader.new(input).to_a
   end
 

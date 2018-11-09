@@ -17,4 +17,3 @@ RSpec.describe DataReader do
     end
   end
 end
-

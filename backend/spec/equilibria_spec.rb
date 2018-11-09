@@ -2,7 +2,7 @@ require './equilibria'
 
 RSpec.describe Equilibria do
 
-  describe '.points' do
+  describe '#indexes' do
     subject { described_class.new(input).indexes }
 
     context 'case 1' do
