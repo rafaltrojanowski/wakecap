@@ -1,19 +1,7 @@
 ### Running 
 
 ```
-yarn start 
-```
-
-# or
-
-```
-npm start 
-```
-
-followed by 
-
-```
-npm install
+yarn start  # or npm start
 ```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -21,8 +9,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Libraries used
 
-React-admin - https://github.com/marmelab/react-admin
-Recharts http://recharts.org/en-US/
+- React-admin - https://github.com/marmelab/react-admin
+- Recharts http://recharts.org/en-US/
 
 ### TODO
 
