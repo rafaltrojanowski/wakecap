@@ -7,6 +7,12 @@ $ ruby main.rb -s "8
 0 -3 5 -4 -2 3 1 0"
 ```
 
+You can also see all available commands by running help command:
+
+```
+$ ruby main.rb -h
+```
+
 ### Running tests
 
 ```
