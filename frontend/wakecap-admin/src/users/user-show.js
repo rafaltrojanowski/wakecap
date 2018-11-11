@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { UserList } from './user-list';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
@@ -19,8 +18,8 @@ import {
   SimpleShowLayout,
   TextField,
 } from 'react-admin';
-
-import dataProvider from './dataProvider';
+import { UserList } from './user-list';
+import dataProvider from './../dataProvider';
 
 const Aside = ({ record }) => (
     <div style={{ width: 80, margin: '1em' }}>
