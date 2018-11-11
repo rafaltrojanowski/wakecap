@@ -4,7 +4,13 @@
 yarn start  # or npm start
 ```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Please remember to install all dependencies before running a server (npm install or yarn install should do the job).
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app),
+
+### Admin credentials
+
+That's simple front-end app, just for demo purposes, with no real API, so any admin credentials will work for your convenience!
 
 
 ### Libraries used
