@@ -1,7 +1,9 @@
 ### Usage
 
+In the `backend` directory, please run following command:
+
 ```
-$ ruby main.rb -n "8
+$ ruby main.rb -s "8
 0 -3 5 -4 -2 3 1 0"
 ```
 
