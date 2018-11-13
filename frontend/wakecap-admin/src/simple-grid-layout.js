@@ -48,13 +48,14 @@ export const SimpleGridLayout = ({
         <div style={styles.wrapper}>
           {Children.map(
               children,
-              field =>
+              (field, index) =>
                   field ? (
                       <div
                           key={field.props.source}
                           className={classnames(
                               `ra-field ra-field-${field.props.source}`,
-                              field.props.className
+                              field.props.className,
+                              `box${index+1}`
                           )}
                       >
                           {field.props.addLabel ? (

@@ -7,10 +7,13 @@ import Labeled from './labeled';
 
 import { withStyles } from '@material-ui/core/styles';
 
+import './simple-grid-chart-layout.css';
+
 const styles = {
   wrapper: {
     display: 'grid',
-    gridTemplateColumns: '100%', // TODO make it work
+    gridTemplateColumns: 'repeat(4, 1fr)',
+    gridAutoRows: '100px',
   },
 };
 
@@ -48,32 +51,33 @@ export const SimpleGridChartLayout = ({
         <div style={styles.wrapper}>
           {Children.map(
               children,
-              field =>
+              (field, index) =>
                   field ? (
                       <div
                           key={field.props.source}
                           className={classnames(
                               `ra-field ra-field-${field.props.source}`,
-                              field.props.className
-                          )}
-                      >
-                          {field.props.addLabel ? (
-                              <Labeled
-                                  record={record}
-                                  resource={resource}
-                                  basePath={basePath}
-                                  label={field.props.label}
-                                  source={field.props.source}
-                                  disabled={false}
-                              >
-                                  {field}
-                              </Labeled>
-                          ) : typeof field.type === 'string' ? (
-                              field
-                          ) : (
-                              React.cloneElement(field, {
-                                  record,
-                                  resource,
+                              field.props.className,
+                                `Chart-box${index+1}`
+                            )}
+                        >
+                            {field.props.addLabel ? (
+                                <Labeled
+                                    record={record}
+                                    resource={resource}
+                                    basePath={basePath}
+                                    label={field.props.label}
+                                    source={field.props.source}
+                                    disabled={false}
+                                >
+                                    {field}
+                                </Labeled>
+                            ) : typeof field.type === 'string' ? (
+                                field
+                            ) : (
+                                React.cloneElement(field, {
+                                    record,
+                                    resource,
                                   basePath,
                               })
                           )}

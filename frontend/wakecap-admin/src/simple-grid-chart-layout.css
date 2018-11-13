@@ -1,0 +1,7 @@
+.Chart-box2 {
+  /* chart box */
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}

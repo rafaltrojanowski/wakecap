@@ -39,7 +39,6 @@ export class UserShow extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = { weeklyHours: null }
   }
 
@@ -82,18 +81,16 @@ export class UserShow extends Component {
             <Show title={title} {...props}>
               <SimpleGridLayout>
                 <TextField source="name" />
-                <div></div>
-                <div></div>
+                <div />
+                <div />
                 <TextField source="supervisor" />
-                <TextField source="total_hours" />
-                <TextField source="last_active_zone" />
-                <div></div>
-                <div></div>
               </SimpleGridLayout>
             </Show>
 
             <Show title={title} {...props} actions={null}>
               <SimpleGridChartLayout>
+                <TextField source="total_hours" />
+
                 <ResponsiveContainer width="100%" height={200}>
                   <BarChart data={weeklyHours}>
                     <XAxis dataKey="date"/>
@@ -107,6 +104,8 @@ export class UserShow extends Component {
                     </Bar>
                   </BarChart>
                 </ResponsiveContainer>
+
+                <TextField source="last_active_zone" />
               </SimpleGridChartLayout>
             </Show>
 
