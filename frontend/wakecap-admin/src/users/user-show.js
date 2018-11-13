@@ -20,7 +20,6 @@ import {
 } from 'react-admin';
 import { UserList } from './user-list';
 import dataProvider from './../dataProvider';
-
 import SimpleGridLayout from './../layouts/simple-grid-layout';
 import SimpleGridChartLayout from './../layouts/simple-grid-chart-layout';
 
@@ -116,7 +115,7 @@ export class UserShow extends Component {
                   <Datagrid>
                     <TextField source="uid" />
                     <TextField source="symbol" />
-                    <DateField source="created_at" />
+                    <DateField source="created_at" showTime/>
                   </Datagrid>
                 </ReferenceManyField>
               </SimpleShowLayout>
