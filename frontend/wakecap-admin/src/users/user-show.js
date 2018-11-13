@@ -21,8 +21,8 @@ import {
 import { UserList } from './user-list';
 import dataProvider from './../dataProvider';
 
-import SimpleGridLayout from './../simple-grid-layout';
-import SimpleGridChartLayout from './../simple-grid-chart-layout';
+import SimpleGridLayout from './../layouts/simple-grid-layout';
+import SimpleGridChartLayout from './../layouts/simple-grid-chart-layout';
 
 const Aside = ({ record }) => (
     <div style={{ width: 80, margin: '1em' }}>
@@ -65,7 +65,7 @@ export class UserShow extends Component {
   render() {
     const { props } = this
     const { weeklyHours } = this.state
-    const title = `| Worker #${props.id}`
+    const title = `| Worker ${props.id}`
 
     if(weeklyHours === null || weeklyHours === undefined) {
       return(<div>Loading data...</div>)
@@ -87,7 +87,7 @@ export class UserShow extends Component {
               </SimpleGridLayout>
             </Show>
 
-            <Show title={title} {...props} actions={null}>
+            <Show title=" " {...props} actions={null}>
               <SimpleGridChartLayout>
                 <TextField source="total_hours" />
 
@@ -109,7 +109,7 @@ export class UserShow extends Component {
               </SimpleGridChartLayout>
             </Show>
 
-            <Show title={title} {...props} actions={null}>
+            <Show title=" " {...props} actions={null}>
               <SimpleShowLayout>
 
                 <ReferenceManyField label="Assigned Helmets" reference="helmets" target="user_id">
