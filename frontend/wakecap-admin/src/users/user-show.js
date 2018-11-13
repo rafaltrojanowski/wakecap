@@ -21,6 +21,9 @@ import {
 import { UserList } from './user-list';
 import dataProvider from './../dataProvider';
 
+import SimpleGridLayout from './../simple-grid-layout';
+import SimpleGridChartLayout from './../simple-grid-chart-layout';
+
 const Aside = ({ record }) => (
     <div style={{ width: 80, margin: '1em' }}>
         <Typography variant="title">Supervisor</Typography>
@@ -36,10 +39,7 @@ export class UserShow extends Component {
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      weeklyHours: null
-    }
+    this.state = { weeklyHours: null }
   }
 
   componentDidMount() {
@@ -78,13 +78,18 @@ export class UserShow extends Component {
             <UserList {...props}/>
           </Grid>
           <Grid item sm={8} xs={12}>
-            <Show aside={<Aside />} title={title} {...props}>
-              <SimpleShowLayout>
+            <Show title={title} {...props}>
+              <SimpleGridLayout>
                 <TextField source="name" />
-                <TextField source="total_hours" />
-                <TextField source="last_active_zone" />
+                <div />
+                <div />
+                <TextField source="supervisor" />
+              </SimpleGridLayout>
+            </Show>
 
-                <Divider />
+            <Show title={title} {...props} actions={null}>
+              <SimpleGridChartLayout>
+                <TextField source="total_hours" />
 
                 <ResponsiveContainer width="100%" height={200}>
                   <BarChart data={weeklyHours}>
@@ -100,7 +105,12 @@ export class UserShow extends Component {
                   </BarChart>
                 </ResponsiveContainer>
 
-                <Divider />
+                <TextField source="last_active_zone" />
+              </SimpleGridChartLayout>
+            </Show>
+
+            <Show title={title} {...props} actions={null}>
+              <SimpleShowLayout>
 
                 <ReferenceManyField label="Assigned Helmets" reference="helmets" target="user_id">
                   <Datagrid>
